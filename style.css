@@ -1,144 +1,188 @@
-* {
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
 body {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('img/architecture-ancient-monument-world-heritage-day-celebration.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
 }
+
 a {
     text-decoration: none;
+    color: inherit;
 }
+
 .container {
     width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
 }
+
+/* ==================== HEADER ==================== */
 #header {
     padding: 25px 0;
+    background: transparent;
 }
-   
-    .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .header-logo {
-    justify-content: space-between;
     display: flex;
     align-items: center;
     gap: 20px;
-    h4 {
-        color: #fff;
-        font-size: 20px;
-        font-weight: 700;
-        align-items: center;
-    }
-    img {
-        max-width: 50px;
-        max-height: 50px;
-        background: transparent;
-    }
-   
 }
 
+.header-logo h4 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.header-logo img {
+    max-width: 50px;
+    max-height: 50px;
+    background: transparent;
+}
 
 .header-right nav {
-  display: flex; 
-  list-style: none;
-  gap: 60px;
-  padding: 0; 
-  margin: 0;
-}
-.header-right li {
-  margin-right: 20px;
-}
-.header-right a {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
 }
 
-body, #header, #section1, #footer {
-  background-image: url('img/architecture-ancient-monument-world-heritage-day-celebration.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; 
-  background-repeat: no-repeat;
+.header-right a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
 }
+
+.header-right a:hover {
+    opacity: 0.75;
+}
+
+/* ==================== SECTION 1 ==================== */
+#section1 {
+    background: transparent;
+    padding: 60px 0;
+}
+
 .section1 {
     display: flex;
-    
     justify-content: space-between;
-    gap: 200px;
-    padding-top: 150px;
-    margin-bottom: 80px;
-    letter-spacing: 0.4em;
+    align-items: center;
+    gap: 60px;
 }
+
 .s1-left {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
-    gap: 40px;
+    align-items: flex-start;
+    gap: 30px;
     color: #fff;
-    margin-left: 40px;
-}
-.s1-left button {
-    padding: 14px 30px;
-    border: none;
-    border-radius: 6px;
-    background-color:rgb(5, 145, 253);
-}
-.movie {
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    h4 {
-        font-size: 20px;
-        font-weight: 700;
-        align-items: center;
-    }
-    img {
-        max-width: 30px;
-        max-height: 30px;
-        background: transparent;
-    }
 }
 
+.s1-left h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: 0.2em;
+}
+
+.movie {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.movie h4 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.movie img {
+    max-width: 30px;
+    max-height: 30px;
+    background: transparent;
+}
+
+.s1-left button {
+    padding: 14px 34px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(5, 145, 253);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(5, 145, 253, 0.4);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.s1-left button:hover {
+    background-color: rgb(3, 120, 215);
+    transform: translateY(-2px);
+}
 
 .s1-right {
     display: flex;
-    justify-content: space-around;
     align-items: center;
     gap: 50px;
-    margin-top: 150px;
 }
-.info-card {
 
-    background: rgba(38, 38, 38, 0.6);
+.info-card {
+    background: rgba(30, 30, 30, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: #fff;
-    padding: 20px 25px;
-    max-width: 280px;
-    max-height: 150px;
-    border-radius: 10px;
+    padding: 24px 28px;
+    max-width: 290px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .info-card h3 {
     font-size: 18px;
     font-weight: 700;
-    padding: 15px 0;
+    margin-bottom: 12px;
     letter-spacing: 3px;
-    color: rgba(255,255,255, 0.85);
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .info-card p {
-    font-size: 12px;
-    color: rgba(255,255,255, 0.7);
-    margin: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.8;
-    padding-bottom: 15px;
+    margin: 0;
 }
-
 
 .vertical-slider {
     display: flex;
@@ -146,13 +190,16 @@ body, #header, #section1, #footer {
     align-items: center;
     gap: 15px;
     font-weight: bold;
+    color: #fff;
 }
+
 .line-bg {
     width: 2px;
-    height: 250px;
-    background: rgba(255,255,255,0.2);
-    position: relative;}
-                    
+    height: 230px;
+    background: rgba(255, 255, 255, 0.25);
+    position: relative;
+}
+
 .line-fill {
     width: 100%;
     height: 30%;
@@ -162,55 +209,224 @@ body, #header, #section1, #footer {
     animation: moveLine 3s infinite alternate ease-in-out;
 }
 
-.info-line span {
-    color: #fff;
+@keyframes moveLine {
+    0% { top: 0; }
+    100% { top: 70%; }
 }
 
+.info-line span {
+    color: #fff;
+    font-size: 14px;
+}
 
-
-
-footer {
-    padding: 70px 0; }
+/* ==================== FOOTER ==================== */
+#footer {
+    padding: 40px 0 50px;
+    background: transparent;
+}
 
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; }
+    align-items: flex-end;
+    gap: 30px;
+}
 
 .social-links {
     display: flex;
-    gap: 30px; }
+    gap: 30px;
+}
 
 .social-links a {
     color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     letter-spacing: 2px;
-    opacity: 0.8;
-    transition: 0.3s; }
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.social-links a:hover {
+    opacity: 1;
+}
 
 .stats-grid {
     display: flex;
-    gap: 80px; }
-       
+    gap: 70px;
+}
 
- .stat-box {
-    color: #fff;;
+.stat-box {
+    color: #fff;
     text-align: left;
-    h2 { 
-        font-size: 32px; 
-        margin-bottom: 5px; }
-        p { 
-            font-size: 12px; 
-            opacity: 0.6; 
-            letter-spacing: 1px; 
-        }
+}
+
+.stat-box h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.stat-box p {
+    font-size: 12px;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+/* ==================== RESPONSIVE (TABLETS & MOBILE) ==================== */
+@media (max-width: 868px) {
+    body {
+        background-attachment: scroll;
+        background-position: center center;
     }
 
+    #header {
+        padding: 20px 0;
+    }
 
-@media (max-width: 768px) {
-    body, #header, #section1, #footer {
-        background-attachment: scroll;
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .header-right nav {
+        gap: 25px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .header-right a {
+        font-size: 15px;
+    }
+
+    #section1 {
+        padding: 30px 0 40px;
+    }
+
+    .section1 {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .s1-left {
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+        margin-left: 0;
+    }
+
+    .s1-left h1 {
+        font-size: 38px;
+        letter-spacing: 0.15em;
+    }
+
+    .movie {
+        justify-content: center;
+    }
+
+    .s1-right {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .info-card {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Convert vertical slider to horizontal on mobile for a clean modern look */
+    .vertical-slider {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .line-bg {
+        width: 140px;
+        height: 2px;
+    }
+
+    .line-fill {
+        width: 30%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        animation: moveLineH 3s infinite alternate ease-in-out;
+    }
+
+    @keyframes moveLineH {
+        0% { left: 0; }
+        100% { left: 70%; }
+    }
+
+    #footer {
+        padding: 30px 0 40px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .stats-grid {
+        justify-content: center;
+        gap: 35px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .stat-box {
+        text-align: center;
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo h4 {
+        font-size: 20px;
+    }
+
+    .header-right nav {
+        gap: 18px;
+    }
+
+    .header-right a {
+        font-size: 14px;
+    }
+
+    .s1-left h1 {
+        font-size: 30px;
+        letter-spacing: 0.1em;
+    }
+
+    .s1-left button {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .stats-grid {
+        gap: 20px;
+    }
+
+    .stat-box h2 {
+        font-size: 26px;
+    }
+
+    .stat-box p {
+        font-size: 11px;
     }
 }
